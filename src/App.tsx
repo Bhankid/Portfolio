@@ -46,21 +46,21 @@ const skills = [
 
 const experiences = [
   {
-    title: 'Senior Software Engineer',
-    company: 'Tech Corp',
-    period: '2021 - Present',
+    title: 'Software Engineer',
+    company: 'Bisame Digital LTD',
+    period: '2024 - Present',
     description: 'Led the development of enterprise-scale React applications, mentored junior developers, and implemented cloud-native solutions using AWS.',
   },
   {
-    title: 'Lead Developer',
-    company: 'StartupX',
-    period: '2019 - 2021',
+    title: 'Full Stack Developer',
+    company: 'Msoft Ghana Limited',
+    period: '2023 - 2025',
     description: 'Architected and built scalable microservices, implemented CI/CD pipelines, and managed a team of 5 developers.',
   },
   {
-    title: 'Full Stack Developer',
-    company: 'DevCo',
-    period: '2017 - 2019',
+    title: 'Software Engineer',
+    company: 'Fleet Labs',
+    period: '2023 - 2025',
     description: 'Developed full-stack applications using React, Node.js, and PostgreSQL. Implemented real-time features using WebSocket.',
   },
 ];
