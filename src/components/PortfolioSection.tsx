@@ -68,7 +68,7 @@ const defaultProjects: Project[] = [
 
 const PortfolioSection: React.FC<PortfolioSectionProps> = ({
   isActive,
-  projects = defaultProjects,
+  // projects = defaultProjects,
 }) => {
   // Force all projects to be visible
   const displayProjects = [...defaultProjects];
@@ -83,7 +83,7 @@ const PortfolioSection: React.FC<PortfolioSectionProps> = ({
         <h2 className="text-3xl md:text-5xl font-bold mb-12 text-center bg-gradient-to-r from-primary-500 to-accent-500 text-transparent bg-clip-text">
           Featured Projects
         </h2>
-        
+        <div className="mt-6 mb-6 w-24 h-1 bg-gradient-to-r from-primary-500 to-accent-500 mx-auto rounded-full"></div>
         <div className="flex flex-wrap -mx-4">
           {displayProjects.map((project, index) => (
             <div key={index} className="w-full md:w-1/2 lg:w-1/3 px-4 mb-8">

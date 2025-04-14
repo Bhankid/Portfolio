@@ -39,6 +39,7 @@ const AboutSection: React.FC<AboutSectionProps> = ({ isActive, skills, experienc
         <h2 className="text-3xl md:text-5xl font-bold mb-8 bg-gradient-to-r text-center from-primary-500 to-accent-500 text-transparent bg-clip-text">
           About Me
         </h2>
+        <div className="mt-6 mb-4 w-24 h-1 bg-gradient-to-r from-primary-500 to-accent-500 mx-auto rounded-full"></div>
         <p className="text-lg mb-12 leading-relaxed text-gray-700 dark:text-gray-300">
           I'm a passionate Software Engineer with over 3 years of experience in building modern, scalable applications.
           My expertise spans across full-stack development, cloud architecture, and team leadership. I thrive on solving complex technical challenges and mentoring fellow developers.
