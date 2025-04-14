@@ -11,6 +11,7 @@ import ContactSection from './components/ContactSection';
 const skills = [
   // Frontend
   { name: 'React & React Native', level: 85 },
+  { name: 'Next JS', level: 88 },
   { name: 'JavaScript', level: 85 },
   { name: 'TypeScript', level: 80 },
   { name: 'HTML5', level: 85 },

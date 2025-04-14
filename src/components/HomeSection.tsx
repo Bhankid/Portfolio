@@ -75,18 +75,18 @@ const HomeSection: React.FC<HomeSectionProps> = ({ isActive }) => {
         </div>
         
         {/* Social links with staggered animation */}
-        <div className="flex justify-center gap-6 mb-12">
+        <div className="flex justify-center flex-wrap gap-3 sm:gap-6 mb-8 sm:mb-12 px-2">
           {[
-            { icon: <Github className="w-6 h-6" />, delay: 400, color: 'hover:text-gray-800 dark:hover:text-white', href: '#' },
-            { icon: <Linkedin className="w-6 h-6" />, delay: 500, color: 'hover:text-blue-600', href: '#' },
-            { icon: <Mail className="w-6 h-6" />, delay: 600, color: 'hover:text-red-500', href: '#' },
-            { icon: <Code className="w-6 h-6" />, delay: 700, color: 'hover:text-green-500', href: '#' },
-            { icon: <Zap className="w-6 h-6" />, delay: 800, color: 'hover:text-yellow-500', href: '#' }
+            { icon: <Github className="w-5 h-5 sm:w-6 sm:h-6" />, delay: 400, color: 'hover:text-gray-800 dark:hover:text-white', href: '#' },
+            { icon: <Linkedin className="w-5 h-5 sm:w-6 sm:h-6" />, delay: 500, color: 'hover:text-blue-600', href: '#' },
+            { icon: <Mail className="w-5 h-5 sm:w-6 sm:h-6" />, delay: 600, color: 'hover:text-red-500', href: '#' },
+            { icon: <Code className="w-5 h-5 sm:w-6 sm:h-6" />, delay: 700, color: 'hover:text-green-500', href: '#' },
+            { icon: <Zap className="w-5 h-5 sm:w-6 sm:h-6" />, delay: 800, color: 'hover:text-yellow-500', href: '#' }
           ].map((item, index) => (
-            <a 
+            <a
               key={index}
               href={item.href}
-              className={`p-4 rounded-full bg-gray-100/80 dark:bg-dark-800/80 backdrop-blur-sm ${item.color} transform hover:scale-110 hover:-translate-y-1 transition-all duration-300 shadow-md ${
+              className={`p-3 sm:p-4 rounded-full bg-gray-100/80 dark:bg-dark-800/80 backdrop-blur-sm ${item.color} transform hover:scale-110 hover:-translate-y-1 transition-all duration-300 shadow-md ${
                 loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
               }`}
               style={{ transitionDelay: `${item.delay}ms` }}
@@ -95,30 +95,31 @@ const HomeSection: React.FC<HomeSectionProps> = ({ isActive }) => {
               {item.icon}
             </a>
           ))}
-        </div>
-        
+        </div> 
         {/* Resume button with animated gradient border */}
-        <div 
+        <div
           className={`relative group ${
             loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-          } transition-all duration-1000 delay-900`}
+          } transition-all duration-1000 delay-900 inline-block mx-auto`}
         >
           <div className="absolute -inset-0.5 bg-gradient-to-r from-primary-400 via-accent-500 to-primary-600 rounded-full opacity-70 group-hover:opacity-100 blur-sm group-hover:blur transition-all duration-300"></div>
           <button className="relative bg-white dark:bg-dark-800 text-primary-500 dark:text-primary-400 font-medium px-10 py-4 rounded-full flex items-center gap-3 mx-auto hover:scale-105 transition-all duration-300 shadow-xl">
             <Download className="w-5 h-5" />
-            <span>Download Resume</span>
+            <span className="whitespace-nowrap">Download Resume</span>
             <span className="absolute inset-0 rounded-full bg-gradient-to-r from-primary-500 to-accent-500 opacity-0 group-hover:opacity-10 transition-opacity duration-300"></span>
           </button>
         </div>
-        
+
         {/* Animated typing text */}
-        <div 
-          className={`mt-12 text-sm text-gray-500 dark:text-gray-400 ${
-            loaded ? 'opacity-100' : 'opacity-0'
-          } transition-opacity duration-1000 delay-1000`}
-        >
-          <p className="typewriter-text">Building innovative solutions with modern technologies</p>
-        </div>
+        <div
+        className={`mt-12 text-sm text-gray-500 dark:text-gray-400 ${
+          loaded ? 'opacity-100' : 'opacity-0'
+        } transition-opacity duration-1000 delay-1000 max-w-full px-4`}
+      >
+        <p className="typewriter-text text-center whitespace-wrap mx-auto break-words sm:whitespace-nowrap whitespace-normal">
+          Building innovative solutions with modern technologies
+        </p>
+      </div>
       </div>
     </section>
   );
