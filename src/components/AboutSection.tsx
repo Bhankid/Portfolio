@@ -40,7 +40,7 @@ const AboutSection: React.FC<AboutSectionProps> = ({ isActive, skills, experienc
           About Me
         </h2>
         <p className="text-lg mb-12 leading-relaxed text-gray-700 dark:text-gray-300">
-          I'm a passionate software engineer with over 3 years of experience in building modern, scalable applications.
+          I'm a passionate Software Engineer with over 3 years of experience in building modern, scalable applications.
           My expertise spans across full-stack development, cloud architecture, and team leadership. I thrive on solving complex technical challenges and mentoring fellow developers.
         </p>
 
