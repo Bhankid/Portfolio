@@ -9,15 +9,40 @@ import ContactSection from './components/ContactSection';
 
 // Data
 const skills = [
-  { name: 'React & React Native', level: 95 },
-  { name: 'TypeScript / JavaScript', level: 90 },
-  { name: 'Node.js & Express', level: 85 },
-  { name: 'AWS & Cloud Architecture', level: 80 },
-  { name: 'GraphQL & REST APIs', level: 88 },
-  { name: 'DevOps & CI/CD', level: 82 },
-  { name: 'System Design', level: 85 },
-  { name: 'Agile & Team Leadership', level: 90 },
+  // Frontend
+  { name: 'React & React Native', level: 85 },
+  { name: 'JavaScript', level: 85 },
+  { name: 'TypeScript', level: 80 },
+  { name: 'HTML5', level: 85 },
+  { name: 'Tailwind CSS', level: 80 },
+  { name: 'Bootstrap', level: 78 },
+  { name: 'SCSS', level: 75 },
+  { name: 'jQuery', level: 70 },
+  { name: 'Next.js', level: 75 },
+  { name: 'Figma', level: 70 },
+  
+  // Backend
+  { name: 'Node.js & Express', level: 80 },
+  { name: 'PHP', level: 75 },
+  { name: 'Laravel', level: 72 },
+  { name: 'Python', level: 68 },
+  { name: 'Django', level: 65 },
+  { name: 'Java', level: 60 },
+  
+  // Database & API
+  { name: 'SQL', level: 78 },
+  { name: 'MongoDB', level: 75 },
+  { name: 'GraphQL & REST APIs', level: 78 },
+  
+  // DevOps & Architecture
+  { name: 'AWS & Cloud Architecture', level: 70 },
+  { name: 'DevOps & CI/CD', level: 65 },
+  { name: 'System Design', level: 70 },
+  
+  // Soft Skills
+  { name: 'Agile & Team Leadership', level: 75 },
 ];
+
 
 const experiences = [
   {
