@@ -26,7 +26,7 @@ export default function Navigation({
   setActiveTab: (tab: string) => void 
 }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [scrollPosition, setScrollPosition] = useState(0);
+  const [, setScrollPosition] = useState(0);
   const [showFloatingButton, setShowFloatingButton] = useState(false);
 
   // Track scroll position to show/hide mobile menu button
@@ -52,43 +52,44 @@ export default function Navigation({
   return (
     <>
       {/* Desktop Navigation - Vertical Sidebar */}
-      <motion.nav 
-        className="hidden lg:flex flex-col fixed right-8 top-1/2 -translate-y-1/2 space-y-5 z-50"
-        initial={{ opacity: 0, x: 20 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.5 }}
+     <motion.nav
+  className="hidden lg:flex flex-col fixed right-8 top-1/2 transform -translate-y-1/2 space-y-5 z-50"
+  initial={{ opacity: 0, x: 20 }}
+  animate={{ opacity: 1, x: 0 }}
+  transition={{ duration: 0.5 }}
+  style={{ marginTop: 0 }} // Ensure no margin is affecting position
+>
+  {tabs.map((tab) => {
+    const Icon = tab.icon;
+    const isActive = activeTab === tab.id;
+    
+    return (
+      <motion.div
+        key={tab.id}
+        className="relative group"
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.95 }}
       >
-        {tabs.map((tab) => {
-          const Icon = tab.icon;
-          const isActive = activeTab === tab.id;
-          
-          return (
-            <motion.div
-              key={tab.id}
-              className="relative group"
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <button
-                onClick={() => setActiveTab(tab.id)}
-                className={`p-4 rounded-full transition-all duration-300 shadow-md ${
-                  isActive
-                    ? 'bg-gradient-to-r from-primary-500 to-accent-500 text-white'
-                    : 'bg-white dark:bg-dark-800 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-dark-700'
-                }`}
-                aria-label={tab.label}
-              >
-                <Icon className={`w-5 h-5 ${isActive ? 'animate-pulse' : ''}`} />
-              </button>
-              
-              {/* Label tooltip */}
-              <div className="absolute right-full mr-3 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-                <div className="bg-white dark:bg-dark-800 text-gray-800 dark:text-white px-3 py-1 rounded-lg shadow-lg whitespace-nowrap text-sm font-medium">
-                  {tab.label}
-                </div>
-                <div className="absolute top-1/2 -translate-y-1/2 right-0 transform translate-x-1/2 rotate-45 w-2 h-2 bg-white dark:bg-dark-800"></div>
-              </div>
-            </motion.div>
+        <button
+          onClick={() => setActiveTab(tab.id)}
+          className={`p-4 rounded-full transition-all duration-300 shadow-md ${
+            isActive
+              ? 'bg-gradient-to-r from-primary-500 to-accent-500 text-white'
+              : 'bg-white dark:bg-dark-800 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-dark-700'
+          }`}
+          aria-label={tab.label}
+        >
+          <Icon className={`w-5 h-5 ${isActive ? 'animate-pulse' : ''}`} />
+        </button>
+        
+        {/* Label tooltip */}
+        <div className="absolute right-full mr-3 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+          <div className="bg-white dark:bg-dark-800 text-gray-800 dark:text-white px-3 py-1 rounded-lg shadow-lg whitespace-nowrap text-sm font-medium">
+            {tab.label}
+          </div>
+          <div className="absolute top-1/2 -translate-y-1/2 right-0 transform translate-x-1/2 rotate-45 w-2 h-2 bg-white dark:bg-dark-800"></div>
+        </div>
+      </motion.div>
           );
         })}
       </motion.nav>
