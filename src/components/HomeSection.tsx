@@ -66,7 +66,7 @@ const HomeSection: React.FC<HomeSectionProps> = ({ isActive }) => {
                 loaded ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
               } transition-all duration-1000 delay-200`}
             >
-              Senior Software Engineer
+              Software Engineer
             </p>
             <Sparkles className={`w-5 h-5 text-accent-500 ${
               loaded ? 'opacity-100 scale-100' : 'opacity-0 scale-0'
@@ -77,9 +77,9 @@ const HomeSection: React.FC<HomeSectionProps> = ({ isActive }) => {
         {/* Social links with staggered animation */}
         <div className="flex justify-center flex-wrap gap-3 sm:gap-6 mb-8 sm:mb-12 px-2">
           {[
-            { icon: <Github className="w-5 h-5 sm:w-6 sm:h-6" />, delay: 400, color: 'hover:text-gray-800 dark:hover:text-white', href: '#' },
-            { icon: <Linkedin className="w-5 h-5 sm:w-6 sm:h-6" />, delay: 500, color: 'hover:text-blue-600', href: '#' },
-            { icon: <Mail className="w-5 h-5 sm:w-6 sm:h-6" />, delay: 600, color: 'hover:text-red-500', href: '#' },
+            { icon: <Github className="w-5 h-5 sm:w-6 sm:h-6" />, delay: 400, color: 'hover:text-gray-800 dark:hover:text-white', href: 'https://github.com/Bhankid' },
+            { icon: <Linkedin className="w-5 h-5 sm:w-6 sm:h-6" />, delay: 500, color: 'hover:text-blue-600', href: 'https://www.linkedin.com/in/alfred-fianyo/' },
+            { icon: <Mail className="w-5 h-5 sm:w-6 sm:h-6" />, delay: 600, color: 'hover:text-red-500', href: 'alfredfianyo50@gmail.com' },
             { icon: <Code className="w-5 h-5 sm:w-6 sm:h-6" />, delay: 700, color: 'hover:text-green-500', href: '#' },
             { icon: <Zap className="w-5 h-5 sm:w-6 sm:h-6" />, delay: 800, color: 'hover:text-yellow-500', href: '#' }
           ].map((item, index) => (
