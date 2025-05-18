@@ -56,7 +56,7 @@ const ServiceRequestModal: React.FC<ServiceRequestModalProps> = ({ isOpen, onClo
         type: "spring",
         stiffness: 300,
         damping: 25
-      }
+      } 
     },
     exit: { 
       opacity: 0, 
