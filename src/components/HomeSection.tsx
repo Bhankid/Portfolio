@@ -88,6 +88,8 @@ const HomeSection: React.FC<HomeSectionProps> = ({ isActive }) => {
             <a
               key={index}
               href={item.href}
+              target="_blank"
+              rel="noopener noreferrer"
               className={`p-3 sm:p-4 rounded-full bg-gray-100/80 dark:bg-dark-800/80 backdrop-blur-sm ${item.color} transform hover:scale-110 hover:-translate-y-1 transition-all duration-300 shadow-md ${
                 loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
               }`}
