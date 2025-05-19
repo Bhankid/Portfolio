@@ -24,15 +24,27 @@ const ServiceRequestModal: React.FC<ServiceRequestModalProps> = ({ isOpen, onClo
     setFormState((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
+  
+    try {
+      const { name, email, service, requirements } = formState;
+  
+      const message = `Service Request
+        Name: ${name}
+        Email: ${email}
+        Service Type: ${service}
+        Requirements: ${requirements}`;
+  
+      const whatsappNumber = '2330554572904';
+      const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+  
+      window.open(whatsappURL, '_blank');
+  
       setIsSubmitted(true);
-      
+      setIsSubmitting(false);
+  
       // Reset after showing success message
       setTimeout(() => {
         setIsSubmitted(false);
@@ -43,9 +55,14 @@ const ServiceRequestModal: React.FC<ServiceRequestModalProps> = ({ isOpen, onClo
           requirements: '',
         });
         onClose();
-      }, 2000);
-    }, 1000);
+      }, 3000);
+    } catch (error) {
+      console.error(error);
+      alert('Something went wrong. Please try again.');
+      setIsSubmitting(false);
+    }
   };
+  
 
   const modalVariants = {
     hidden: { opacity: 0, scale: 0.9 },
@@ -179,11 +196,11 @@ const ServiceRequestModal: React.FC<ServiceRequestModalProps> = ({ isOpen, onClo
                             value={formState.service}
                             onChange={handleChange}
                             required
-                            className="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 bg-white dark:bg-dark-700"
+                            className="w-full px-4 py-2 cursor-pointer border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 bg-white dark:bg-dark-700"
                           >
                             <option value="">Select a service</option>
                             {serviceOptions.map((option) => (
-                              <option key={option} value={option}>
+                              <option key={option} value={option} className="cursor-pointer">
                                 {option}
                               </option>
                             ))}
