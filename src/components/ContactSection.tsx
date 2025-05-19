@@ -38,10 +38,10 @@ const ContactSection: React.FC<ContactSectionProps> = ({ isActive }) => {
     const { name, email, message } = formState;
     const whatsappNumber = '2330554572904';
     const whatsappMessage = `
-      *Contact Inquiry*%0A
-      *Name:* ${name}%0A
-      *Email:* ${email}%0A
-      *Message:* ${message}
+      Contact Inquiry
+      Name: ${name}
+      Email: ${email}
+      Message: ${message}
         `.trim();
   
     const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
@@ -258,7 +258,7 @@ const ContactSection: React.FC<ContactSectionProps> = ({ isActive }) => {
                   <h4 className="text-sm font-semibold text-gray-500 dark:text-gray-400 mb-4">CONNECT</h4>
                   <div className="flex space-x-4">
                     <a 
-                      href="https://github.com" 
+                      href="https://github.com/Bhankid" 
                       target="_blank" 
                       rel="noopener noreferrer"
                       className="w-10 h-10 rounded-full bg-gray-100 dark:bg-dark-700 flex items-center justify-center text-gray-700 dark:text-gray-300 hover:bg-primary-500 hover:text-white transition-all"
@@ -266,7 +266,7 @@ const ContactSection: React.FC<ContactSectionProps> = ({ isActive }) => {
                       <Github className="w-5 h-5" />
                     </a>
                     <a 
-                      href="https://linkedin.com" 
+                      href="https://www.linkedin.com/in/alfred-fianyo/" 
                       target="_blank" 
                       rel="noopener noreferrer"
                       className="w-10 h-10 rounded-full bg-gray-100 dark:bg-dark-700 flex items-center justify-center text-gray-700 dark:text-gray-300 hover:bg-primary-500 hover:text-white transition-all"
@@ -274,7 +274,7 @@ const ContactSection: React.FC<ContactSectionProps> = ({ isActive }) => {
                       <Linkedin className="w-5 h-5" />
                     </a>
                     <a 
-                      href="https://twitter.com" 
+                      href="https://x.com/Unruly_Bhankid?s=09" 
                       target="_blank" 
                       rel="noopener noreferrer"
                       className="w-10 h-10 rounded-full bg-gray-100 dark:bg-dark-700 flex items-center justify-center text-gray-700 dark:text-gray-300 hover:bg-primary-500 hover:text-white transition-all"

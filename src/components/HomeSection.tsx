@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { Download, Github, Linkedin, Mail, Code, Zap, Sparkles } from 'lucide-react';
+import { Download, Github, Linkedin, Mail, Sparkles } from 'lucide-react';
+import { FaXTwitter } from 'react-icons/fa6';
+import { SiHashnode } from 'react-icons/si';
 
 interface HomeSectionProps {
   isActive: boolean;
@@ -80,8 +82,8 @@ const HomeSection: React.FC<HomeSectionProps> = ({ isActive }) => {
             { icon: <Github className="w-5 h-5 sm:w-6 sm:h-6" />, delay: 400, color: 'hover:text-gray-800 dark:hover:text-white', href: 'https://github.com/Bhankid' },
             { icon: <Linkedin className="w-5 h-5 sm:w-6 sm:h-6" />, delay: 500, color: 'hover:text-blue-600', href: 'https://www.linkedin.com/in/alfred-fianyo/' },
             { icon: <Mail className="w-5 h-5 sm:w-6 sm:h-6" />, delay: 600, color: 'hover:text-red-500', href: 'alfredfianyo50@gmail.com' },
-            { icon: <Code className="w-5 h-5 sm:w-6 sm:h-6" />, delay: 700, color: 'hover:text-green-500', href: '#' },
-            { icon: <Zap className="w-5 h-5 sm:w-6 sm:h-6" />, delay: 800, color: 'hover:text-yellow-500', href: '#' }
+            { icon: <FaXTwitter className="w-5 h-5 sm:w-6 sm:h-6" />, delay: 700, color: 'hover:text-green-500', href: 'https://x.com/Unruly_Bhankid?s=09' },
+            { icon: <SiHashnode  className="w-5 h-5 sm:w-6 sm:h-6" />, delay: 800, color: 'hover:text-yellow-500', href: 'https://hashnode.com/@AlfredFianyo' }
           ].map((item, index) => (
             <a
               key={index}
