@@ -33,16 +33,27 @@ const ContactSection: React.FC<ContactSectionProps> = ({ isActive }) => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Simulate form submission
+    setIsSubmitted(true);
+  
+    const { name, email, message } = formState;
+    const whatsappNumber = '2330554572904';
+    const whatsappMessage = `
+      *Contact Inquiry*%0A
+      *Name:* ${name}%0A
+      *Email:* ${email}%0A
+      *Message:* ${message}
+        `.trim();
+  
+    const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+    window.open(whatsappURL, '_blank');
+  
+    // Reset form after 3 seconds
     setTimeout(() => {
-      setIsSubmitted(true);
-      // Reset form after 3 seconds
-      setTimeout(() => {
-        setIsSubmitted(false);
-        setFormState({ name: '', email: '', message: '' });
-      }, 3000);
-    }, 1000);
+      setIsSubmitted(false);
+      setFormState({ name: '', email: '', message: '' });
+    }, 3000);
   };
+  
 
   const containerVariants = {
     hidden: { opacity: 0 },
